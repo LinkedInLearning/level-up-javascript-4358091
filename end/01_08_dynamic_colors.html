@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Colors</title>
+</head>
+
+<body>
+  <!-- To run this file right click the file in the navigation bar and select "Open with live server. Then open the developer tools in the browser and head to the console window."-->
+
+  <!-- Use these elements to trigger the color change -->
+  <button id="blue">Blue</button>
+  <button id="pink">Pink</button>
+  <button id="green">Green</button>
+
+  <script>
+    // Write your code here
+    function changeColor(color) {
+      return function () {
+        document.body.style.background = color;
+      }
+    }
+
+    const bgColorBlue = changeColor("#0f62f3");
+    const bgColorPink = changeColor("#ff7eb6");
+    const bgColorGreen = changeColor("#42be65");
+
+
+    document.querySelector('#blue').addEventListener('click', bgColorBlue);
+    document.querySelector('#pink').addEventListener('click', bgColorPink);
+    document.querySelector('#green').addEventListener('click', bgColorGreen);
+  </script>
+</body>
+
+</html>
