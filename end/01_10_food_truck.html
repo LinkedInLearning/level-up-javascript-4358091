@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Truck</title>
+</head>
+
+<body>
+  <!-- To run this file right click the file in the navigation bar and select "Open with live server. Then open the developer tools in the browser and head to the console window."-->
+
+  <!-- Use this element to generate your menu -->
+  <ul id="combined-menu"></ul>
+
+  <script>
+    // Write your code here
+    function foodTruckFestival(menus) {
+      let flatMenus = menus.flat();
+
+      let combinedMenu = new Set();
+      flatMenus.forEach(item => combinedMenu.add(item));
+
+      const menuNode = document.querySelector('#combined-menu');
+      for (let item of combinedMenu) {
+        let foodNode = document.createElement('li');
+        foodNode.innerText = item;
+        menuNode.appendChild(foodNode);
+      }
+    }
+
+    foodTruckFestival([["Tacos", "Burgers"], ["Pizza"], ["Burgers", "Fries"]]);
+  </script>
+</body>
+
+</html>
