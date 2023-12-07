@@ -19,6 +19,25 @@
   <script>
     // Write your code here
 
+
+  function updateBackgroundColor() {
+    const bodyEl = document.querySelector('body')
+    const blueBtn = document.getElementById('blue')
+    const pinkBtn = document.getElementById('pink')
+    const greenBtn = document.getElementById('green')
+
+    function changeColor() {
+      [blueBtn, pinkBtn, greenBtn].forEach( btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault()
+          bodyEl.style.backgroundColor = e.target.innerText
+        })
+      })
+    }
+    changeColor()
+  }
+
+  updateBackgroundColor()
   </script>
 </body>
 
