@@ -35,6 +35,15 @@
     ]
     // Write your code here
 
+    const vegetarianDishes = menu.filter( dish => dish.isVegetarian)
+    console.log("vegetarianDishes", vegetarianDishes)
+    const listEl = document.querySelector('#menu')
+    vegetarianDishes.forEach( el => {
+      const listItem = document.createElement('li')
+      listItem.innerHTML = el.name
+      listEl.appendChild(listItem)
+    })
+
   </script>
 </body>
 

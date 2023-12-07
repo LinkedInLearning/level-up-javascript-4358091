@@ -16,7 +16,12 @@
 
   <script>
     // Write your code here
-    
+   const clockEl = document.querySelector('#clock')
+   const currDate = new Date()
+   const currTime = currDate.toLocaleTimeString()
+   setTimeout(() => {
+    clockEl.innerHTML = currTime
+   }, 2000)
   </script>
 </body>
 
