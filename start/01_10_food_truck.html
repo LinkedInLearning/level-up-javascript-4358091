@@ -15,7 +15,23 @@
   <ul id="combined-menu"></ul>
 
   <script>
-    // Write your code here
+    function createSingleList() {
+      const list = []
+      const currLists = [...arguments]
+      currLists.forEach( arg => {
+        list.push(...arg)
+      })
+      return new Set([...list])
+    }
+    
+    const currList = createSingleList(["Tacos", "Burgers"], ["Pizza"], ["Burgers", "Fries"]);
+
+    const listEl = document.querySelector('#combined-menu')
+    currList.forEach( el => {
+      const nodeItem = document.createElement('li')
+      nodeItem.innerHTML = el
+      listEl.appendChild(nodeItem)
+    })
 
   </script>
 </body>

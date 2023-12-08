@@ -16,7 +16,32 @@
 
   <script>
     // Write your code here
+    // stops: Poughkeepsie, Newburg, Peekskill, Yonkers, Bronx, Grand Central
 
+    const nextStopBtn = document.querySelector('#next-stop')
+
+    function* nextStopGenerator() {
+      yield 'Poughkeepsie'
+      yield 'Newburg'
+      yield 'Peekskill'
+      yield 'Yonkers'
+      yield 'Bronx'
+      yield 'Grand Central - We made it'
+    }
+    const generator = nextStopGenerator()
+
+    function goToNextStop() {
+      const nextStop = generator.next()
+      if (nextStop.value.includes('Grand Central')) {
+        const el = document.createElement('p')
+        el.innerHTML = nextStop.value
+        document.body.append(el)
+        nextStopBtn.disabled = true
+        return 
+      }
+    }
+
+    nextStopBtn.addEventListener('click', goToNextStop)
   </script>
 </body>
 
